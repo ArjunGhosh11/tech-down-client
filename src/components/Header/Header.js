@@ -17,13 +17,17 @@ const Header = () => {
             <Navbar collapseOnSelect expand="lg" sticky='top' bg="secondary" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
-                        <img height={30} src={logo} alt="" />
+                        <div className='d-flex align-items-center'>
+                            <img height={30} src={logo} alt="" />
+                            <h1 className='text-dark fw-bolder text-center'><span className='text-white'>Tech</span>Down</h1>
+                        </div>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link href="home">Home</Nav.Link>
                         </Nav>
+
                         <Nav>
                             <Nav.Link as={Link} to="blog">Blog</Nav.Link>
                             {

@@ -11,7 +11,7 @@ const Footer = () => {
                     <img src={logo} alt="" />
                     <h5 className='fw-bolder'><span className='text-white'>Tech</span>Down</h5>
                 </div>
-                <div className="footer-items b-2">
+                <div className="footer-items ">
                     <p className='fw-bolder'>CONTACT US</p>
                     <p><small>Phone: 01711111111</small></p>
                     <p><small>Email: techdown@gmail.com</small></p>

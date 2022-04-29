@@ -3,7 +3,7 @@ import './Home.css';
 const Home = () => {
     return (
         <div>
-            <h2>This is HOME</h2>
+            <h1 className='fw-bolder text-center'><span className='text-secondary'>Tech</span>Down</h1>
         </div>
     );
 };

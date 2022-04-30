@@ -39,8 +39,6 @@ const Inventory = () => {
     // }
     return (
         <div className='inventory w-50 mx-auto d-flex flex-column align-items-center justify-contents-center shadow-lg p-3 my-5 bg-body rounded'>
-
-            <h2>Inventory: {id}</h2>
             <img className='w-100' src={img} alt="" />
             <h4>{name}</h4>
             <h5>ID: {_id}</h5>
@@ -48,7 +46,7 @@ const Inventory = () => {
             <h4>Price: ${price}</h4>
             <h4>Quantity: {quantity}</h4>
             <p title={description}>Description: {description}</p>
-            {/* <button onClick={() => updateQuantity(item, setItem)} className='delivered-button btn btn-secondary w-100'>Delivered</button> */}
+            {/* <button onClick={() => updateQuantity(item, setItem)} className='delivered-button btn btn-secondary w-100'>Delivered</button>  */}
         </div>
     );
 };

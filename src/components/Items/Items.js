@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
 import Item from '../Item/Item';
 import './Items.css';
@@ -6,6 +7,10 @@ const Items = () => {
     const [items, setItems] = useItems();
     let sixItems = [];
     console.log(items);
+    const navigate = useNavigate();
+    const navigateToInventory = id => {
+        navigate(`/inventory/${id}`);
+    }
     if (items.length <= 6) {
         sixItems = items;
     }
@@ -22,6 +27,8 @@ const Items = () => {
                 {
                     sixItems.map(item => <Item
                         item={item}
+                        clickHandler={navigateToInventory}
+                        buttonName="Stock Update"
                     ></Item>)
                 }
             </div>

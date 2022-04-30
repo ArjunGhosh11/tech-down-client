@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from 'firebase/auth';
 import auth from '../../firebase.init';
+import Loading from '../Loading/loading';
 const Register = () => {
     const nameRef = useRef('');
     const emailRef = useRef('');
@@ -26,7 +27,7 @@ const Register = () => {
     const [sendEmailVerification] = useSendEmailVerification(auth);
 
     if (loading) {
-        return <p>Loading...</p>
+        return <Loading></Loading>;
     }
     if (user) {
         navigate(from, { replace: true });

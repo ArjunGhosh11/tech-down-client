@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import './AddItem.css';
 const AddItem = () => {
@@ -10,12 +11,14 @@ const AddItem = () => {
         const email = event.target.email.value;
         const img = event.target.img.value;
         const supplierName = event.target.supplierName.value;
-        const quantity = event.target.quantity.value;
-        const description = event.target.descriptionlue;
-        const sold = event.target.sold.value;
-        const price = event.target.price.value;
+        const quantity = parseInt(event.target.quantity.value);
+        const description = event.target.description.value;
+        const sold = parseInt(event.target.sold.value);
+        const price = parseInt(event.target.price.value);
         const item = { name, email, img, supplierName, quantity, description, sold, price };
-        //SEND DATA to server
+        console.log(item);
+
+        // SEND DATA to server
         fetch('http://localhost:5000/item', {
             method: 'POST',
             headers: {
@@ -25,9 +28,12 @@ const AddItem = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('Success:', data);
-                alert('User Added successfully');
+                toast('User Added successfully');
                 event.target.reset();
+                console.log(data);
+            })
+            .catch(error => {
+                console.log(error.message);
             })
     }
     return (
@@ -40,15 +46,16 @@ const AddItem = () => {
                 <br />
                 <input className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="text" name='img' placeholder='Image URL' required />
                 <br />
+                <input className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="text" name='description' placeholder='Description' required />
+                <br />
                 <input className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="text" name='supplierName' placeholder='Supplier Name' required />
                 <br />
-                <input className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="text" name='quantity' placeholder='Quantity' required />
+                <input className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="number" name='quantity' placeholder='Quantity' required />
                 <br />
-                <textarea className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="text" name='description' placeholder='Description' required />
+
+                <input className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="number" name='sold' placeholder='Sold' required />
                 <br />
-                <input className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="text" name='sold' placeholder='Sold' required />
-                <br />
-                <input className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="text" name='price' placeholder='Price' required />
+                <input className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="number" name='price' placeholder='Price' required />
                 <br />
                 <input className='w-100 border border-3 text-center  rounded-pill p-2 mb-3 bg-secondary fw-bolder' type="submit" value="Add Item" />
             </form>

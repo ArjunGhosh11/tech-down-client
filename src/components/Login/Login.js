@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin'
-
+import Loading from '../Loading/loading';
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -25,7 +25,7 @@ const Login = () => {
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     if (loading || sending) {
-        return 'loading';
+        return <Loading></Loading>;
     }
 
     if (user) {

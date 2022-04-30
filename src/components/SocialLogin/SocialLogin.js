@@ -3,7 +3,7 @@ import google from '../../images/google.png';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useNavigate } from 'react-router-dom';
-
+import Loading from '../Loading/loading';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -12,7 +12,7 @@ const SocialLogin = () => {
     let errorElement;
 
     if (loading) {
-        return <p>Loading...</p>
+        return <Loading></Loading>
     }
 
     if (error) {

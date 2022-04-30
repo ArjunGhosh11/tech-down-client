@@ -6,9 +6,14 @@ const Items = () => {
     const [items, setItems] = useItems();
     let sixItems = [];
     console.log(items);
-    for (let i = 0; i < 6; i++) {
-        sixItems.push(items[i]);
-    };
+    if (items.length <= 6) {
+        sixItems = items;
+    }
+    else {
+        for (let i = 0; i < 6; i++) {
+            sixItems.push(items[i]);
+        };
+    }
     console.log(sixItems);
     return (
         <div className='container'>

@@ -2,7 +2,25 @@
     {
         "name": "iPhone 13 Pro Max",
         "price": 1400,
-        "img": "https://i.ibb.co/vmwST8p/iphone-13-pro-max.jpg",
+        "img": "https://i.ibb.co/DYqcxvk/iphone-13-pro-max.jpg",
+        "quantity": 50,
+        "description": "All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received unless a damaged packaging issue arises.",
+        "supplierName": "Steve Jobs",
+        "sold": 20
+    },
+    {
+        "name": "MacBook Pro",
+        "price": 2400,
+        "img": "https://i.ibb.co/QXy0Tv3/macbook-pro.jpg",
+        "quantity": 30,
+        "description": "Please check each units while unloading.All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received.",
+        "supplierName": "Thomas Shelby",
+        "sold": 8
+    },
+    {
+        "name": "Apple AirPods Max",
+        "price": 1400,
+        "img": "https://i.ibb.co/YhsW3mR/air-max.jpg",
         "quantity": 50,
         "description": "All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received.",
         "supplierName": "Steve Jobs",
@@ -11,7 +29,25 @@
     {
         "name": "iPhone 13 Pro Max",
         "price": 1400,
-        "img": "https://i.ibb.co/vmwST8p/iphone-13-pro-max.jpg",
+        "img": "https://i.ibb.co/DYqcxvk/iphone-13-pro-max.jpg",
+        "quantity": 50,
+        "description": "All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received unless a damaged packaging issue arises.",
+        "supplierName": "Steve Jobs",
+        "sold": 20
+    },
+    {
+        "name": "MacBook Pro",
+        "price": 2400,
+        "img": "https://i.ibb.co/QXy0Tv3/macbook-pro.jpg",
+        "quantity": 30,
+        "description": "Please check each units while unloading.All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received.",
+        "supplierName": "Thomas Shelby",
+        "sold": 8
+    },
+    {
+        "name": "Apple AirPods Max",
+        "price": 1400,
+        "img": "https://i.ibb.co/YhsW3mR/air-max.jpg",
         "quantity": 50,
         "description": "All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received.",
         "supplierName": "Steve Jobs",
@@ -20,70 +56,25 @@
     {
         "name": "iPhone 13 Pro Max",
         "price": 1400,
-        "img": "https://i.ibb.co/vmwST8p/iphone-13-pro-max.jpg",
+        "img": "https://i.ibb.co/DYqcxvk/iphone-13-pro-max.jpg",
         "quantity": 50,
-        "description": "All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received.",
+        "description": "All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received unless a damaged packaging issue arises.",
         "supplierName": "Steve Jobs",
         "sold": 20
     },
     {
-        "name": "iPhone 13 Pro Max",
-        "price": 1400,
-        "img": "https://i.ibb.co/vmwST8p/iphone-13-pro-max.jpg",
-        "quantity": 50,
-        "description": "All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received.",
-        "supplierName": "Steve Jobs",
-        "sold": 20
+        "name": "MacBook Pro",
+        "price": 2400,
+        "img": "https://i.ibb.co/QXy0Tv3/macbook-pro.jpg",
+        "quantity": 30,
+        "description": "Please check each units while unloading.All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received.",
+        "supplierName": "Thomas Shelby",
+        "sold": 8
     },
     {
-        "name": "iPhone 13 Pro Max",
+        "name": "Apple AirPods Max",
         "price": 1400,
-        "img": "https://i.ibb.co/vmwST8p/iphone-13-pro-max.jpg",
-        "quantity": 50,
-        "description": "All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received.",
-        "supplierName": "Steve Jobs",
-        "sold": 20
-    },
-    {
-        "name": "iPhone 13 Pro Max",
-        "price": 1400,
-        "img": "https://i.ibb.co/vmwST8p/iphone-13-pro-max.jpg",
-        "quantity": 50,
-        "description": "All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received.",
-        "supplierName": "Steve Jobs",
-        "sold": 20
-    },
-    {
-        "name": "iPhone 13 Pro Max",
-        "price": 1400,
-        "img": "https://i.ibb.co/vmwST8p/iphone-13-pro-max.jpg",
-        "quantity": 50,
-        "description": "All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received.",
-        "supplierName": "Steve Jobs",
-        "sold": 20
-    },
-    {
-        "name": "iPhone 13 Pro Max",
-        "price": 1400,
-        "img": "https://i.ibb.co/vmwST8p/iphone-13-pro-max.jpg",
-        "quantity": 50,
-        "description": "All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received.",
-        "supplierName": "Steve Jobs",
-        "sold": 20
-    },
-    {
-        "name": "iPhone 13 Pro Max",
-        "price": 1400,
-        "img": "https://i.ibb.co/vmwST8p/iphone-13-pro-max.jpg",
-        "quantity": 50,
-        "description": "All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received.",
-        "supplierName": "Steve Jobs",
-        "sold": 20
-    },
-    {
-        "name": "iPhone 13 Pro Max",
-        "price": 1400,
-        "img": "https://i.ibb.co/vmwST8p/iphone-13-pro-max.jpg",
+        "img": "https://i.ibb.co/YhsW3mR/air-max.jpg",
         "quantity": 50,
         "description": "All the units are duly checked and examined before they were sent. And since they are very expensive no return will be entertained once bought and received.",
         "supplierName": "Steve Jobs",

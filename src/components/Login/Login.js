@@ -13,7 +13,6 @@ const Login = () => {
     const passwordRef = useRef('');
     const navigate = useNavigate();
     const location = useLocation();
-
     let from = location.state?.from?.pathname || "/";
     let errorElement;
     const [
@@ -22,6 +21,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
@@ -45,7 +45,6 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
         const { data } = await axios.post('http://localhost:5000/login', { email });
         localStorage.setItem('accessToken', data.accessToken);
-        navigate(from, { replace: true });
     }
 
     const navigateRegister = event => {

@@ -16,7 +16,6 @@ const AddItem = () => {
         const sold = parseInt(event.target.sold.value);
         const price = parseInt(event.target.price.value);
         const item = { name, email, img, supplierName, quantity, description, sold, price };
-        console.log(item);
 
         // SEND DATA to server
         fetch('http://localhost:5000/item', {
@@ -30,10 +29,6 @@ const AddItem = () => {
             .then(data => {
                 toast('User Added successfully');
                 event.target.reset();
-                console.log(data);
-            })
-            .catch(error => {
-                console.log(error.message);
             })
     }
     return (

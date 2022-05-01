@@ -22,7 +22,6 @@ const Items = () => {
             sixItems.push(items[i]);
         };
     }
-    console.log(sixItems);
     return (
         <div className='container shadow-lg p-3 my-5 bg-body rounded'>
             <h2 className='text-secondary text-center my-5'>ITEMS</h2>

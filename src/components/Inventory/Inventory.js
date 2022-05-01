@@ -15,8 +15,7 @@ const Inventory = () => {
     if (!item) {
         return <Loading></Loading>
     }
-    console.log(item);
-    const { _id, img, name, supplierName, description, quantity, price } = item;
+    const { _id, img, name, supplierName, description, quantity, price, sold } = item;
 
     const sendToServer = (item, _id, toastMessage) => {
         const url = `http://localhost:5000/item/${_id}`;
@@ -39,24 +38,22 @@ const Inventory = () => {
     const reduceQuantity = (item, setItem) => {
         const { _id, img, name, supplierName, description, quantity, price } = item;
         const newQuantity = parseInt(quantity) - 1;
-        console.log("new quantity:", newQuantity);
         const updatedItem = { _id, img, name, supplierName, description, 'quantity': newQuantity, price }
         setItem(updatedItem);
-        console.log(item);
         //send to the server
         sendToServer(item, _id, "Item Delivered!");
 
 
     }
+    sendToServer(item, _id, "");
     const handleAddQuantity = (event, item, setItem) => {
+
         event.preventDefault();
         const addQuantity = event.target.quantity.value;
-        const { _id, img, name, supplierName, description, quantity, price } = item;
+        const { _id, img, name, supplierName, description, quantity, price, sold } = item;
         const newQuantity = parseInt(quantity) + parseInt(addQuantity);
-        console.log("new quantity:", newQuantity);
-        const updatedItem = { _id, img, name, supplierName, description, 'quantity': newQuantity, price }
+        const updatedItem = { _id, img, name, supplierName, description, 'quantity': newQuantity, price, sold }
         setItem(updatedItem);
-        console.log(item);
         //Send to server
         sendToServer(item, _id, "Item/items received!");
     }
@@ -68,6 +65,7 @@ const Inventory = () => {
             <h4>Supplier Name: {supplierName}</h4>
             <h4>Price: ${price}</h4>
             <h4>Quantity: {quantity}</h4>
+            <h4>Sold: {sold}</h4>
             <p title={description}>Description: {description}</p>
             <button onClick={() => reduceQuantity(item, setItem)} className='delivered-button mb-3 rounded-pill fw-bolder btn btn-secondary w-100'>Delivered</button>
             <form className='w-100' onSubmit={(event) => handleAddQuantity(event, item, setItem)}>

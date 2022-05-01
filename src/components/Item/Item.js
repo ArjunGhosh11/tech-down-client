@@ -1,9 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-
 import './Item.css';
 const Item = ({ item, clickHandler, buttonName }) => {
-    console.log(item);
     const { _id, img, name, supplierName, description, quantity, price } = item;
 
     return (

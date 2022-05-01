@@ -16,7 +16,6 @@ const MyItems = () => {
     if (!items) {
         return <Loading></Loading>
     }
-    console.log(items);
     return (
         <div className='shadow-lg p-3 mb-5 bg-body rounded'>
             <h2 className='fw-bolder text-center my-5'><span className='text-secondary'>MY</span> ITEMS</h2>

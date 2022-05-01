@@ -8,7 +8,6 @@ const ItemTable = ({ items, setItems }) => {
     const handleItemDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            console.log('deleted Id:', id);
             const url = `http://localhost:5000/item/${id}`;
             fetch(url, {
                 method: 'DELETE'

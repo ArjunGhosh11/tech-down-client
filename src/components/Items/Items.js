@@ -3,11 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
 import Item from '../Item/Item';
 import './Items.css';
+import Loading from '../Loading/loading';
 const Items = () => {
     const [items, setItems] = useItems();
-    let sixItems = [];
-    console.log(items);
     const navigate = useNavigate();
+    let sixItems = [];
+    if (!items) {
+        return <Loading></Loading>;
+    }
     const navigateToInventory = id => {
         navigate(`/inventory/${id}`);
     }
@@ -26,6 +29,7 @@ const Items = () => {
             <div className='items-section '>
                 {
                     sixItems.map(item => <Item
+                        key={item._id}
                         item={item}
                         clickHandler={navigateToInventory}
                         buttonName="Stock Update"

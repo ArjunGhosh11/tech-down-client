@@ -18,14 +18,7 @@ const Inventory = () => {
     console.log(item);
     const { _id, img, name, supplierName, description, quantity, price } = item;
 
-    const updateQuantity = (item, setItem) => {
-        const { _id, img, name, supplierName, description, quantity, price } = item;
-        const newQuantity = parseInt(quantity) - 1;
-        console.log("new quantity:", newQuantity);
-        const updatedItem = { _id, img, name, supplierName, description, 'quantity': newQuantity, price }
-        setItem(updatedItem);
-        console.log(item);
-        //send to the server
+    const sendToServer = (item, _id, toastMessage) => {
         const url = `http://localhost:5000/item/${_id}`;
         fetch(url, {
             method: 'PUT',
@@ -36,10 +29,36 @@ const Inventory = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('Success:', data);
-                toast('Item Delivered!');
-            })
 
+                if (toastMessage !== '') {
+                    toast(`${toastMessage}`);
+                }
+            })
+    }
+    sendToServer(item, _id, "");
+    const reduceQuantity = (item, setItem) => {
+        const { _id, img, name, supplierName, description, quantity, price } = item;
+        const newQuantity = parseInt(quantity) - 1;
+        console.log("new quantity:", newQuantity);
+        const updatedItem = { _id, img, name, supplierName, description, 'quantity': newQuantity, price }
+        setItem(updatedItem);
+        console.log(item);
+        //send to the server
+        sendToServer(item, _id, "Item Delivered!");
+
+
+    }
+    const handleAddQuantity = (event, item, setItem) => {
+        event.preventDefault();
+        const addQuantity = event.target.quantity.value;
+        const { _id, img, name, supplierName, description, quantity, price } = item;
+        const newQuantity = parseInt(quantity) + parseInt(addQuantity);
+        console.log("new quantity:", newQuantity);
+        const updatedItem = { _id, img, name, supplierName, description, 'quantity': newQuantity, price }
+        setItem(updatedItem);
+        console.log(item);
+        //Send to server
+        sendToServer(item, _id, "Item/items received!");
     }
     return (
         <div className='inventory w-50 mx-auto d-flex flex-column align-items-center justify-contents-center shadow-lg p-3 my-5 bg-body rounded'>
@@ -50,7 +69,12 @@ const Inventory = () => {
             <h4>Price: ${price}</h4>
             <h4>Quantity: {quantity}</h4>
             <p title={description}>Description: {description}</p>
-            <button onClick={() => updateQuantity(item, setItem)} className='delivered-button btn btn-secondary w-100'>Delivered</button>
+            <button onClick={() => reduceQuantity(item, setItem)} className='delivered-button mb-3 rounded-pill fw-bolder btn btn-secondary w-100'>Delivered</button>
+            <form className='w-100' onSubmit={(event) => handleAddQuantity(event, item, setItem)}>
+                <input className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="number" name='quantity' placeholder='Quantity' required />
+                <br />
+                <input className='w-100 border border-3 text-center  rounded-pill p-2 mb-3 bg-secondary fw-bolder' type="submit" value="Add Item" />
+            </form>
         </div>
     );
 };

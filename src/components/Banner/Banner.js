@@ -20,7 +20,7 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3 className='text-white fw-bolder'>The Place For Tech Lovers!!</h3>
+                        <h3 className='text-dark fw-bolder'>The Place For Tech Lovers!!</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

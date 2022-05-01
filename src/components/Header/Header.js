@@ -16,7 +16,7 @@ const Header = () => {
         <>
             <Navbar collapseOnSelect expand="lg" sticky='top' bg="secondary" variant="dark">
                 <Container>
-                    <Navbar.Brand as={Link} to="/">
+                    <Navbar.Brand as={Link} to="/home">
                         <div className='d-flex align-items-center'>
                             <img height={30} src={logo} alt="" />
                             <h1 className='text-dark fw-bolder text-center'><span className='text-white'>Tech</span>Down</h1>

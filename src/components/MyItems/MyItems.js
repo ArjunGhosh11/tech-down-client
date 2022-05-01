@@ -7,7 +7,7 @@ import ItemTable from '../ItemTable/ItemTable';
 const MyItems = () => {
     const [items, setItems] = useState();
     const [user] = useAuthState(auth);
-    const url = `http://localhost:5000/item?email=${user.email}`;
+    const url = `https://mighty-spire-40970.herokuapp.com/item?email=${user.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

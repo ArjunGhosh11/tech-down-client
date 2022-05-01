@@ -18,7 +18,7 @@ const AddItem = () => {
         const item = { name, email, img, supplierName, quantity, description, sold, price };
 
         // SEND DATA to server
-        fetch('http://localhost:5000/item', {
+        fetch('https://mighty-spire-40970.herokuapp.com/item', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

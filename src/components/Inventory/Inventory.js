@@ -7,7 +7,7 @@ const Inventory = () => {
     const { id } = useParams();
     const [item, setItem] = useState();
     useEffect(() => {
-        const url = `http://localhost:5000/item/${id}`;
+        const url = `https://mighty-spire-40970.herokuapp.com/item/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data));
@@ -18,7 +18,7 @@ const Inventory = () => {
     const { _id, img, name, supplierName, description, quantity, price, sold } = item;
 
     const sendToServer = (item, _id, toastMessage) => {
-        const url = `http://localhost:5000/item/${_id}`;
+        const url = `https://mighty-spire-40970.herokuapp.com/item/${_id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -28,26 +28,21 @@ const Inventory = () => {
         })
             .then(res => res.json())
             .then(data => {
-
                 if (toastMessage !== '') {
                     toast(`${toastMessage}`);
                 }
             })
     }
-    sendToServer(item, _id, "");
     const reduceQuantity = (item, setItem) => {
         const { _id, img, name, supplierName, description, quantity, price } = item;
+        // sendToServer(item, _id, "");
         const newQuantity = parseInt(quantity) - 1;
-        const updatedItem = { _id, img, name, supplierName, description, 'quantity': newQuantity, price }
+        const updatedItem = { _id, img, name, supplierName, description, 'quantity': newQuantity, price, sold }
         setItem(updatedItem);
         //send to the server
         sendToServer(item, _id, "Item Delivered!");
-
-
     }
-    sendToServer(item, _id, "");
     const handleAddQuantity = (event, item, setItem) => {
-
         event.preventDefault();
         const addQuantity = event.target.quantity.value;
         const { _id, img, name, supplierName, description, quantity, price, sold } = item;
@@ -55,8 +50,12 @@ const Inventory = () => {
         const updatedItem = { _id, img, name, supplierName, description, 'quantity': newQuantity, price, sold }
         setItem(updatedItem);
         //Send to server
+        sendToServer(item, _id, "");
         sendToServer(item, _id, "Item/items received!");
+        event.target.reset();
+        sendToServer(item, _id, "");
     }
+    sendToServer(item, _id, "");
     return (
         <div className='inventory w-50 mx-auto d-flex flex-column align-items-center justify-contents-center shadow-lg p-3 my-5 bg-body rounded'>
             <img className='w-100' src={img} alt="" />

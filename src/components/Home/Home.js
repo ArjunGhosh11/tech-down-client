@@ -8,11 +8,10 @@ import { Table } from 'react-bootstrap';
 const Home = () => {
     const [suppliers, setSuppliers] = useState();
     useEffect(() => {
-        fetch('http://localhost:5000/supplier')
+        fetch('https://mighty-spire-40970.herokuapp.com/supplier')
             .then(res => res.json())
             .then(data => setSuppliers(data))
     }, []);
-    console.log(suppliers);
     if (!suppliers) {
         return <Loading></Loading>
     }
@@ -22,10 +21,9 @@ const Home = () => {
         const supplierName = event.target.supplierName.value;
         const phone = event.target.phone.value;
         const supplier = { email, supplierName, phone };
-        console.log(supplier);
-
+        setSuppliers([...suppliers, supplier]);
         //SEND DATA to server
-        fetch('http://localhost:5000/supplier', {
+        fetch('https://mighty-spire-40970.herokuapp.com/supplier', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -36,7 +34,7 @@ const Home = () => {
             .then(data => {
                 toast('Supplier Added successfully');
                 event.target.reset();
-            })
+            });
     }
     return (
         <div>
@@ -47,7 +45,6 @@ const Home = () => {
                 <Table striped bordered hover variant="dark" className=''>
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone Number</th>
@@ -55,8 +52,9 @@ const Home = () => {
                     </thead>
                     <tbody>
                         {
-                            suppliers.map(supplier => <tr>
-                                <td>{supplier._id}</td>
+                            suppliers.map(supplier => <tr
+                                key={supplier._id}
+                            >
                                 <td>{supplier.supplierName}</td>
                                 <td>{supplier.email}</td>
                                 <td>{supplier.phone}</td>

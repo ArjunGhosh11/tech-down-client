@@ -43,7 +43,7 @@ const Login = () => {
         const password = passwordRef.current.value;
 
         signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('http://localhost:5000/login', { email });
+        const { data } = await axios.post('https://mighty-spire-40970.herokuapp.com/login', { email });
         localStorage.setItem('accessToken', data.accessToken);
     }
 

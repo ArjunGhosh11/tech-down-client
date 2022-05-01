@@ -8,7 +8,7 @@ const ItemTable = ({ items, setItems }) => {
     const handleItemDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/item/${id}`;
+            const url = `https://mighty-spire-40970.herokuapp.com/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -27,7 +27,6 @@ const ItemTable = ({ items, setItems }) => {
             <Table striped bordered hover variant="dark" className=''>
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Name</th>
                         <th>Supplier Name</th>
                         <th>Price</th>
@@ -40,8 +39,7 @@ const ItemTable = ({ items, setItems }) => {
                 <tbody>
                     {
                         items.map(item => <tr>
-                            <td>{item._id}</td>
-                            <td>{item.name}</td>
+                            <td><div className='d-flex justify-contents-center align-items-center'><img style={{ height: '25px', width: '25px' }} className='rounded mx-2' src={item.img} alt="" />{item.name}</div></td>
                             <td>{item.supplierName}</td>
                             <td>$ {item.price}</td>
                             <td title={item.description}>{item.description.length > 100 ? item.description.slice(0, 101) + '...' : item.description}</td>

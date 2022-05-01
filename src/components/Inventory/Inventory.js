@@ -35,7 +35,6 @@ const Inventory = () => {
     }
     const reduceQuantity = (item, setItem) => {
         const { _id, img, name, supplierName, description, quantity, price } = item;
-        // sendToServer(item, _id, "");
         const newQuantity = parseInt(quantity) - 1;
         const updatedItem = { _id, img, name, supplierName, description, 'quantity': newQuantity, price, sold }
         setItem(updatedItem);
@@ -50,10 +49,8 @@ const Inventory = () => {
         const updatedItem = { _id, img, name, supplierName, description, 'quantity': newQuantity, price, sold }
         setItem(updatedItem);
         //Send to server
-        sendToServer(item, _id, "");
         sendToServer(item, _id, "Item/items received!");
         event.target.reset();
-        sendToServer(item, _id, "");
     }
     sendToServer(item, _id, "");
     return (

@@ -38,7 +38,7 @@ const AddItem = () => {
     }
     return (
         <div className='w-50 mx-auto p-5 shadow-lg p-3 my-5 bg-body rounded'>
-            <h2 className='text-secondary fw-bolder text-center'>Please Add a New Item</h2>
+            <h2 className=' fw-bolder text-center'>PLEASE ADD A <span className='text-secondary'>NEW ITEM</span></h2>
             <form className='p-3 pt-0 ' onSubmit={handleAddItem}>
                 <input className='w-100 border border-3 text-center  rounded-pill p-2 mb-3' type="text" name='name' placeholder='Product Name' required />
                 <br />

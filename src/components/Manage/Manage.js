@@ -1,10 +1,16 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
+import { Table } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import useItems from '../../hooks/useItems';
-import Item from '../Item/Item';
 import './Manage.css';
+import Loading from '../Loading/loading';
 const Manage = () => {
     const [items, setItems] = useItems();
+    if (!items) {
+        return <Loading></Loading>
+    }
     const handleItemDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
@@ -23,19 +29,39 @@ const Manage = () => {
                 })
         }
     }
-    // console.log(items);
     return (
-        <div>
-            <h2 className='fw-bolder text-center my-5'><span className='text-secondary'>Manage</span> Items</h2>
+        <div className='shadow-lg p-3 mb-5 bg-body rounded'>
+            <h2 className='fw-bolder text-center my-5'><span className='text-secondary'>MANAGE</span> ITEMS</h2>
 
-            <div className='items-section'>
-                {
-                    items.map(item => <Item
-                        item={item}
-                        clickHandler={handleItemDelete}
-                        buttonName="Delete"
-                    ></Item>)
-                }
+            <div className='items-section container'>
+                <Table striped bordered hover variant="dark" className=''>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Supplier Name</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                            <th>Email</th>
+                            <th>Quantity</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            items.map(item => <tr>
+                                <td>{item._id}</td>
+                                <td>{item.name}</td>
+                                <td>{item.supplierName}</td>
+                                <td>$ {item.price}</td>
+                                <td title={item.description}>{item.description.length > 100 ? item.description.slice(0, 101) + '...' : item.description}</td>
+                                <td>{item.email}</td>
+                                <td>{item.quantity}</td>
+                                <td className='text-center'><button onClick={() => handleItemDelete(item._id)} className='text-white bg-dark'><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button></td>
+                            </tr>)
+                        }
+                    </tbody>
+                </Table>
             </div>
 
         </div>

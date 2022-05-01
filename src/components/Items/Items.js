@@ -24,7 +24,7 @@ const Items = () => {
     }
     console.log(sixItems);
     return (
-        <div className='container'>
+        <div className='container shadow-lg p-3 my-5 bg-body rounded'>
             <h2 className='text-secondary text-center my-5'>ITEMS</h2>
             <div className='items-section '>
                 {

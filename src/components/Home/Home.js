@@ -7,8 +7,8 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Items></Items>
-            <div className='shadow-lg p-3 my-5 bg-body rounded'>
-                <h2 className='text-center fw-bolder'>Add Supplier</h2>
+            <div className='container shadow-lg p-3 my-5 bg-body rounded'>
+                <h2 className='text-center fw-bolder my-3'>ADD <span className='text-secondary'>SUPPLIER</span></h2>
                 <form className='w-50 mx-auto'>
                     <input className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="text" name='supplierName' placeholder='Supplier Name' required />
                     <br />

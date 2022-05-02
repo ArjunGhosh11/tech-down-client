@@ -4,6 +4,11 @@
 
 ## [Live Server Site](https://mighty-spire-40970.herokuapp.com/item)
 
+
+## [Client repo link](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-ArjunGhosh11)
+
+## [Server repo link](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-ArjunGhosh11)
+
 * We have a responsive navbar and a footer throughout our website.
 
 * The Blogs page as the answer to your question. If you want to know about me then click the ABOUT option on the nav bar.

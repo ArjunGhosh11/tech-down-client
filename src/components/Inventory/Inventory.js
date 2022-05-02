@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './Inventory.css';
 import Loading from '../Loading/loading';
@@ -12,6 +12,10 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => setItem(data));
     }, []);
+    const navigate = useNavigate();
+    const navigateToManage = () => {
+        navigate("/manageitems");
+    }
     if (!item) {
         return <Loading></Loading>
     }
@@ -64,11 +68,17 @@ const Inventory = () => {
             <h4>Sold: {sold}</h4>
             <p title={description}>Description: {description}</p>
             <button onClick={() => reduceQuantity(item, setItem)} className='delivered-button mb-3 rounded-pill fw-bolder btn btn-secondary w-100'>Delivered</button>
-            <form className='w-100' onSubmit={(event) => handleAddQuantity(event, item, setItem)}>
-                <input className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="number" name='quantity' placeholder='Quantity' required />
-                <br />
-                <input className='w-100 border border-3 text-center  rounded-pill p-2 mb-3 bg-secondary fw-bolder' type="submit" value="Add Item" />
-            </form>
+
+            <div className='container mt-3'>
+                <h2 className='fw-bolder text-center'><span className='text-secondary'>RESTOCK</span> ITEM</h2>
+                <form className='w-100' onSubmit={(event) => handleAddQuantity(event, item, setItem)}>
+                    <input className='w-100 border border-3 text-center rounded-pill p-2 mb-3' type="number" name='quantity' placeholder='Quantity' required />
+                    <br />
+                    <input className='w-100 border border-3 text-center text-white rounded-pill p-2 mb-3 bg-secondary fw-bolder' type="submit" value="Add Units" />
+                </form>
+            </div>
+
+            <div className='w-50 mx-auto my-5'><button onClick={navigateToManage} className='btn btn-secondary rounded-pill p-3 w-100'>MANAGE ITEMS</button></div>
         </div>
     );
 };

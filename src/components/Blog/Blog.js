@@ -1,5 +1,4 @@
 import React from 'react';
-import './Blog.css';
 const Blog = () => {
     return (
         <div className='container shadow-lg p-3 my-5 bg-body rounded'>

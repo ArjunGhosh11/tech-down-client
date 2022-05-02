@@ -1,6 +1,5 @@
 import React from 'react';
 import useItems from '../../hooks/useItems';
-import './Manage.css';
 import Loading from '../Loading/loading';
 import ItemTable from '../ItemTable/ItemTable';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

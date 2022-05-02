@@ -2,7 +2,6 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
-import './AddItem.css';
 const AddItem = () => {
     const [user] = useAuthState(auth);
     const handleAddItem = event => {

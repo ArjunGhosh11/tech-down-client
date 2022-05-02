@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import Banner from '../Banner/Banner';
 import Items from '../Items/Items';
-import './Home.css';
 import Loading from '../Loading/loading';
 import { Table } from 'react-bootstrap';
 const Home = () => {

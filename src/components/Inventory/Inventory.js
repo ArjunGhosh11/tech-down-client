@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import './Inventory.css';
 import Loading from '../Loading/loading';
 const Inventory = () => {
     const { id } = useParams();

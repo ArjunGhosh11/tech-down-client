@@ -37,8 +37,8 @@ const Items = () => {
                         buttonName="Stock Update"
                     ></Item>)
                 }
-                <div className='w-50 mx-auto my-5'><button onClick={navigateToManage} className='btn btn-secondary rounded-pill p-3 w-100'>MANAGE ITEMS</button></div>
             </div>
+            <div className='w-50 mx-auto my-5'><button onClick={navigateToManage} className='btn btn-secondary rounded-pill p-3 w-100'>MANAGE ITEMS</button></div>
         </div>
     );
 };

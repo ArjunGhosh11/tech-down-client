@@ -41,7 +41,7 @@ const ItemTable = ({ items, setItems }) => {
                         items.map(item => <tr>
                             <td><div className='d-flex justify-contents-center align-items-center'><img style={{ height: '25px', width: '25px' }} className='rounded mx-2' src={item.img} alt="" />{item.name}</div></td>
                             <td>{item.supplierName}</td>
-                            <td>$ {item.price}</td>
+                            <td>${item.price}</td>
                             <td title={item.description}>{item.description.length > 100 ? item.description.slice(0, 101) + '...' : item.description}</td>
                             <td>{item.email}</td>
                             <td>{item.quantity}</td>

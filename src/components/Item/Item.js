@@ -6,10 +6,10 @@ const Item = ({ item, clickHandler, buttonName }) => {
     return (
         <div className='item m-5 mt-0'>
             <img src={img} alt="" />
-            <h3>{name}</h3>
-            <h4>Supplier Name: {supplierName}</h4>
-            <h4>Price: ${price}</h4>
-            <h4>Quantity: {quantity}</h4>
+            <h4>{name}</h4>
+            <h5>Supplier Name: {supplierName}</h5>
+            <h5>Price: ${price}</h5>
+            <h5>Quantity: {quantity}</h5>
             <p title={description}>Description: {description.length > 100 ? description.slice(0, 101) + '...' : description}</p>
             <button onClick={() => clickHandler(_id)} className='end-button btn btn-secondary w-50'>{buttonName}</button>
         </div>
